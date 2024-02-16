@@ -1,0 +1,328 @@
+/* HOME SECTION */
+/* Navbar Styling */
+.navbar-elements .navbar-items, .navbar-items a {
+    text-align: center;
+    text-decoration: none;
+    list-style: none;
+    display: flex;
+    margin: 10px;
+    color:rgb(156, 156, 156);
+    transition: transform 0.3s ease, color 0.3s ease;
+    position: relative;
+}
+.navbar-collapse {
+    padding-left: 200px;
+}
+.navbar-items a:hover, .carousel-interactivity i:hover {
+    transform: scale(1.1);
+    color: black;
+}
+.navbar-elements {
+    margin: 0;
+    padding: 0;
+}
+.logo {
+    text-decoration: none;
+    list-style: none;
+    position: relative;
+    left: 170px;
+}
+.video-wrapper .card {
+    border: none;
+}
+.video-wrapper h1, .video-wrapper a {
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
+.video-wrapper ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    font-size: 2em;
+    margin-left: -40px;
+}
+.video-wrapper a {
+    padding: 10px;
+}
+.video-interactivity i {
+    color: black;
+    transition: color 0.3s ease;
+}
+.video-wrapper a:hover i {
+    color:#6d6d6d
+}
+video {
+    width: 70%;
+    height: 70%;
+}
+/* Services Section Homepage */
+.services-image-container {
+    padding: 90px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+    padding-bottom: 150px;
+}
+.services-image-container .card {
+    color: white;
+    border: none;
+}
+.services-image-container {
+    text-align: center;
+}
+.image-container p, .image-container h5 {
+    max-width: 470px;
+    margin-left: -10px;
+}
+.services-image {
+    transition: filter 0.5s ease;
+}
+.image-container:hover .services-image {
+    filter: opacity(50%);
+}
+.services-section-button {
+    position: absolute;
+    margin-top: -90px;
+}
+/* Popular Service Section Homepage */
+.popular-service-section {
+    position: relative;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+    padding-bottom: 100px;
+}
+.popular-service-section img {
+    transition: filter 0.5s ease;
+}
+.popular-service-section img:hover {
+    filter:sepia(50%);
+}
+/* Testimonials Section Homepage */
+.testimonials-section-wrapper {
+    background-color: rgba(255, 227, 227, 0.922);
+    padding: 100px;
+}
+.testimonial-first-col, .testimonial-third-col {
+    background-color: white;
+    height: 600px;
+}
+.testimonials-section-wrapper .card {
+    border: none;
+}
+.testimonials-section-wrapper .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    padding-right: 30px;
+    padding-left: 30px;
+}
+.testimonial-second-col .card-body::before {
+    content: "“";
+    font-size: 220px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    margin-top: 100px;
+}
+/* Testimonial slideshow */
+/* The dots/bullets */
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+.active, .dot:hover {
+    background-color: #717171;
+}
+/* Looks Section with photos on Homepage */
+.looks-presentation {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+.looks-wrapper .card {
+    position: relative;
+    align-items: center;
+}
+.looks-wrapper .card-body {
+    position: absolute;
+    top: 50%;
+    color: white;
+    font-size: 1.5em;
+    text-align: center;
+    display: none;
+}
+.looks-wrapper .card:hover .card-body {
+    display:block;
+}
+.looks-wrapper img {
+    transition: filter 0.3s ease;
+}
+.looks-wrapper .card:hover img {
+    filter: blur(3px) opacity(90%);
+}
+/* FOOTER SECTION */
+.footer-wrapper {
+    color: white;
+    padding-top: 100px;
+    padding-bottom: 50px;
+    text-align: center;
+    font-size: 1.2em;
+}
+.footer-wrapper col {
+    position: relative;
+}
+.footer-wrapper .footer-col1-end {
+    padding-top: 100px;
+}
+.footer-wrapper ul {
+    list-style: none;
+}
+.footer-wrapper a {
+    color: white;
+    text-decoration: none;
+    margin: 10px;
+    transition: color 0.3s ease;
+}
+.footer-wrapper a:hover {
+    color: #717171;
+}
+.footer-address {
+    text-align: start;
+}
+
+@media only screen and (max-width: 900px) {
+    /* Navbar */
+    .navbar-collapse {
+        padding-left: 0;
+    }
+    .navbar-items a:hover {
+        transform: none;
+        color: black;  
+    }
+    video {
+        width: 100%;
+        height: 100%;
+    }
+    /*Main carousel Portfolio */
+    .carousel-image {
+        width: 300px;
+        height: 300px;
+    }
+    /* Testimonials section Homepage */
+    .testimonials-section-wrapper {
+        padding: 0;
+        margin: 0;
+    }
+    .testimonial-first-col, .testimonial-second-col, .testimonial-third-col {
+        height: 300px;
+        padding: 0;
+    }
+    .testimonials-section-wrapper {
+        background-color: white;
+    }
+    .testimonial-first-col {
+        background-color: rgba(255, 227, 227, 0.922);
+    }
+    .g-4 {
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+    }
+    /*Services section Homepage */
+    .services-image-container {
+        padding: 0;
+        padding-top: 20px;
+    }
+    .services-section-button {
+        position:initial;
+        margin: 0;
+    }
+    .btn-col {
+        text-align: center;
+        padding-bottom: 20px;
+    }
+    /* Looks section Homepage */
+    .looks-presentation {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+    /* Footer */
+    #footer-nav-buttons {
+        display: none;
+    }
+    .footer-wrapper .footer-col1-end {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+    .footer-wrapper ul {
+        display: flex;
+        justify-content: center;
+        margin-left: -30px;
+    }
+    .footer-address {
+        text-align: center;
+    }
+    /* NEED TO RESOLVE THE LOOKS SECTION FOR MOBILE CLICKABLE ENLARGE IMAGES */
+
+}
+/* PORTFOLIO PAGE */
+/* Carousel Section */
+.carousel-wrapper {
+    margin-top: 0;
+    position: relative;
+    margin-bottom: 50px;
+}
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    cursor: pointer;
+    width: auto;
+    padding: 10px;
+    color: black;
+    transition: 0.6s ease, transform 0.3s ease;
+    border-radius: 0 5px 5px 0;
+    user-select: none;
+    display: block;
+    margin-top: -22px;
+}
+.next {
+    right: 0;
+    border-radius: 5px 0 0 5px;
+}
+.prev:hover, .next:hover {
+    transform: scale(1.1);
+}
+.my-slides, .my-slides-testimonials {
+    display: none;
+    position: relative;
+}
+.fadee {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+.carousel-button {
+    width: 110px;
+} 
+.carousel-interactivity {
+    position: absolute;
+    right: 50px;
+    max-width: 200px;
+    top: 50%;
+}
+.carousel-interactivity ul {
+    list-style: none;
+    display: flex;
+}
+.carousel-interactivity i {
+    margin-left: -20px;
+    margin-right: 40px;
+    color: black;
+    transition: transform 0.4 ease;
+}
