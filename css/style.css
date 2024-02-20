@@ -20,6 +20,7 @@
 .navbar-elements {
     margin: 0;
     padding: 0;
+    background-color: white;
 }
 .video-wrapper .card {
     border: none;
@@ -60,13 +61,14 @@ video {
 .services-image-container .card {
     color: white;
     border: none;
-}
-.services-image-container {
     text-align: center;
 }
-.image-container p, .image-container h5 {
-    max-width: 470px;
-    margin-left: -10px;
+.services-image-container .card-body-text {
+    max-width: 510px;
+}
+.services-image-container .card-body {
+    display: flex;
+    justify-content: center;
 }
 .services-image {
     transition: filter 0.5s ease;
@@ -136,7 +138,7 @@ video {
 .active, .dot:hover {
     background-color: #717171;
 }
-/* Looks Section with photos on Homepage */
+/* Looks Section with photos on Homepage and Portfolio page */
 .looks-presentation {
     padding-top: 100px;
     padding-bottom: 100px;
@@ -298,16 +300,296 @@ video {
 .services-description p {
     padding-bottom: 40px;
 }
-/*Required for the javascript to work as wanted */
+/*Required for the javascript to work as wanted, within Services page */
 .services-wrapper .active-service {
     display: flex;
 }
 .services-wrapper .nonactive-service {
     display: none;
 }
-@media only screen and (max-width: 900px) {
+/* PORTFOLIO PAGE */
+.portfolio-background {
+    background-image: url("/assets/images/portfolio/background.jpeg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position-x: center;
+    background-position-y: -750px;
+    background-size: cover;
+}
+/* Carousel Section */
+.carousel-wrapper {
+    margin-top: 0;
+    position: relative;
+    margin-bottom: 50px;
+    background-color: white;
+    margin-bottom: 1000px;
+    text-align: center;
+}
+.prev, .next {
+    position: absolute;
+    top: 0;
+    cursor: pointer;
+    width: auto;
+    padding: 10px;
+    color: black;
+    transition: 0.6s ease, transform 0.5s ease;
+    border-radius: 0 5px 5px 0;
+    user-select: none;
+    display: block;
+    margin-top: -22px;
+}
+.next {
+    right: 0;
+    border-radius: 5px 0 0 5px;
+}
+.prev:hover, .next:hover {
+    transform: scale(1.3);
+}
+.my-slides, .my-slides-testimonials {
+    display: none;
+    position: relative;
+}
+.fadee {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+.carousel-button {
+    width: 110px;
+} 
+.carousel-interactivity {
+    position: absolute;
+    right: 200px;
+    max-width: 200px;
+    top: 45%;
+}
+.carousel-interactivity ul {
+    list-style: none;
+}
+.carousel-interactivity li {
+    padding-bottom: 20px;
+}
+#previous, #nextbutton {
+    height: 1700px;
+    display: flex;
+    align-items: center;
+    padding: 50px;
+}
+.carousel-wrapper img {
+    width: 50%;
+}
+.clickable-image, .clickable-image .card-body {
+    cursor: pointer;
+}
+/* MODAL from PORTFOLIO / SLIDESHOW INSIDE MODAL */
+#staticBackdrop .modal-content {
+    background-color: rgba(255, 255, 255, 0.208) !important;
+    text-align: center;
+    position: relative;
+    height: 100%;
+    backdrop-filter: blur(5px);
+}
+#staticBackdrop img {
+    max-width: 100%;
+    max-height: 100vh;
+}
+#staticBackdrop .btn-close {
+    position: absolute;
+    top: 5%;
+    right: 2%;
+    /*Button was getting under the img element, needed for functionality */
+    z-index: 99;
+}
+#staticBackdrop .btn-secondary {
+    position: absolute;
+    top: 94%;
+    right: 1%;
+}
+#staticBackdrop .modal-slides {
+    width: 100%;
+}
+#staticBackdrop .modal-slide {
+    position: relative;
+    display: none;
+}
+#staticBackdrop .modal-slide-text {
+    position: absolute;
+    max-width: 300px;
+    top: 40%;
+    right: 3%;
+    color: white;
+}
+#staticBackdrop .modal-dialog {
+    width: 100%;
+    max-width: none;
+}
+#staticBackdrop .modal-body {
+    height: 100%;
+    padding: 0;
+}
+#staticBackdrop .modal-prev, #staticBackdrop .modal-next {
+    position: absolute;
+    top: 50%;
+    cursor: pointer;
+    width: auto;
+    padding: 10px;
+    color: black;
+    transition: 0.6s ease, transform 0.5s ease;
+    border-radius: 0 5px 5px 0;
+    user-select: none;
+    display: block;
+    margin-top: -22px;
+    /*needed to raise buttons above images and modal*/
+    z-index: 99;
+}
+#staticBackdrop .modal-next {
+    right: 0;
+}
+#staticBackdrop .modal-next:hover, #staticBackdrop .modal-prev:hover {
+    transform: scale(1.2);
+}
+/* Laptop normal screen */
+/* This is needed because I developed the website from a 27 inch desktop screen which is nearly double 
+the size of a laptop screen thus part of the website on laptop screen needed adjusting after completing it on 27 inch screen */
+@media screen and (max-width: 1600px) {
+    .navbar-elements .navbar-collapse {
+        padding-left: 260px;
+    }
+    /* Portfolio part for mobile view*/
+    .carousel-wrapper #previous, .carousel-wrapper #nextbutton {
+        height: 900px !important;
+        padding: 0 !important;
+    }
+       
+    .carousel-wrapper .carousel-item img {
+        width: 47% !important;
+    }
+    .carousel-wrapper .carousel-interactivity {
+        right: 10%;
+        top: 38%;
+    }
+    .portfolio-background {
+        background-position-y: -400px !important;
+    }
+    .carousel-wrapper {
+        margin-bottom: 500px !important;
+    }
+}
+/* VIEW IN BETWEEN DESKTOP AND TABLET/TABLET LANDSCAPE OPTIMIZATION */
+@media screen and (max-width: 1400px) { 
+    .navbar-elements .navbar-collapse {
+        padding-left: 160px;
+    }
+    
+    .carousel-wrapper #previous, .carousel-wrapper #nextbutton {
+        height: 810px !important;
+        padding: 10px !important;
+    }
+    .carousel-wrapper .col-lg-12 {
+        overflow: hidden !important;
+    }
+    .carousel-wrapper .carousel-interactivity {
+        right: 12%;
+        max-width: 200px;
+        top: 35%;
+    }
+    .carousel-wrapper img {
+        width: 67% !important;
+    }
+    .portfolio-background {
+        background-position-y: center !important;
+    }
+    .carousel-wrapper {
+        margin-bottom: 550px !important;
+    }
+}
+/* TABLET VIEW @MEDIA SETTINGS */
+@media screen and (max-width: 1300px){
+    .navbar-elements .navbar-collapse {
+        padding-left: 100px;
+    }
+    .carousel-wrapper #previous, .carousel-wrapper #nextbutton {
+        height: 950px !important;
+        padding: 0;
+    }
+    .carousel-wrapper .carousel-interactivity {
+        right: 45%;
+        max-width: 200px;
+        top: 100%;
+    }
+    .carousel-wrapper img {
+        width: 80% !important;
+    }
+    .carousel-wrapper ul {
+        display: flex;
+    }
+    .portfolio-background {
+        background-position-y: center !important; 
+    }
+    .carousel-wrapper {
+        margin-bottom: 550px !important;
+    }
+}
+/* TABLET VIEW in between 1300px and 900px */
+@media screen and (max-width: 1150px) {
     /* Navbar */
-    .navbar-collapse {
+    .navbar-elements .navbar-collapse {
+        padding-left: 70px !important;
+    }
+    /* Carousel from Portfolio page */
+    .carousel-wrapper .carousel-inner img {
+        width: 65% !important;
+    }
+}
+/* TABLET VIEW PORTRAIT */
+@media screen and (max-width: 900px) {
+    /* Navbar */
+    .navbar-elements .navbar-collapse {
+        padding-left: 0;
+    }
+    /*Services section Homepage */
+    .services-image-container {
+        padding: 0;
+        padding-top: 20px;
+    }
+    .services-section-button {
+        position:initial;
+        margin: 0;
+    }
+    .btn-col {
+        text-align: center;
+        padding-bottom: 20px;
+    }
+    /* Testimonials section Homepage */
+    .testimonials-section-wrapper {
+        padding: 0;
+        margin: 0;
+    }
+    .testimonial-first-col, .testimonial-second-col, .testimonial-third-col {
+        height: 300px;
+        padding: 0;
+    }
+    .testimonials-section-wrapper {
+        background-color: white;
+    }
+    .testimonial-first-col {
+        background-color: rgba(255, 227, 227, 0.922);
+    }
+    .g-4 {
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+    }
+    /* Carousel from portfolio page */
+    .carousel-wrapper #previous, .carousel-wrapper #nextbutton {
+        height: 700px !important;
+    }
+    .portfolio-background {
+        background-position-y: -200px !important;
+    }
+}
+/* MOBILE VIEW */
+@media only screen and (max-width: 600px) {
+    /* Navbar */
+    .navbar-elements .navbar-collapse {
         padding-left: 0;
     }
     .navbar-items a:hover {
@@ -322,11 +604,6 @@ video {
     .video-wrapper h1, .video-wrapper a {
         padding-top: 10x;
         padding-bottom: 10px;
-    }
-    /*Main carousel Portfolio */
-    .carousel-image {
-        width: 300px;
-        height: 300px;
     }
     /* Testimonials section Homepage */
     .testimonials-section-wrapper {
@@ -365,6 +642,13 @@ video {
         padding-top: 50px;
         padding-bottom: 50px;
     }
+    .looks-wrapper .card-body {
+        font-size: 0.7em;
+        top: 20%;
+    }
+    .looks-wrapper .card-body h3 {
+        font-size:medium ;
+    }
     /* Footer */
     .footer-wrapper {
         text-align: center;
@@ -387,64 +671,30 @@ video {
     .footer-address {   
         text-align: center;
     }
-    /* Contact PAGE */
+    /* Contact PAGE for mobile view */
     .contact-wrapper .card {
         width: 22em;
     }
-    /* NEED TO RESOLVE THE LOOKS SECTION FOR MOBILE CLICKABLE ENLARGE IMAGES */
-
-}
-/* PORTFOLIO PAGE */
-/* Carousel Section */
-.carousel-wrapper {
-    margin-top: 0;
-    position: relative;
-    margin-bottom: 50px;
-}
-.prev, .next {
-    position: absolute;
-    top: 50%;
-    cursor: pointer;
-    width: auto;
-    padding: 10px;
-    color: black;
-    transition: 0.6s ease, transform 0.3s ease;
-    border-radius: 0 5px 5px 0;
-    user-select: none;
-    display: block;
-    margin-top: -22px;
-}
-.next {
-    right: 0;
-    border-radius: 5px 0 0 5px;
-}
-.prev:hover, .next:hover {
-    transform: scale(1.1);
-}
-.my-slides, .my-slides-testimonials {
-    display: none;
-    position: relative;
-}
-.fadee {
-    animation-name: fade;
-    animation-duration: 1.5s;
-}
-.carousel-button {
-    width: 110px;
-} 
-.carousel-interactivity {
-    position: absolute;
-    right: 50px;
-    max-width: 200px;
-    top: 50%;
-}
-.carousel-interactivity ul {
-    list-style: none;
-    display: flex;
-}
-.carousel-interactivity i {
-    margin-left: -20px;
-    margin-right: 40px;
-    color: black;
-    transition: transform 0.4 ease;
+    /* Portfolio part for mobile view*/
+    .carousel-wrapper #previous, .carousel-wrapper #nextbutton {
+        height: 500px !important;
+        padding: 0 !important;
+    }
+    .carousel-wrapper .carousel-interactivity {
+        right: 40% !important;
+        max-width: 200px !important;
+        top: 100% !important;
+    }
+    .carousel-wrapper ul {
+        display: flex !important;
+    }
+    .carousel-wrapper .carousel-item img {
+        width: 100% !important;
+    }
+    .portfolio-background {
+        background-position-y: 0px !important;
+    }
+    .carousel-wrapper {
+        margin-bottom: 400px !important;
+    }
 }
